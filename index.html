@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal estático para planejamento interdisciplinar com a BNCC Computação." />
+  <meta name="theme-color" content="#163c36" />
+  <title>Trama — BNCC Computação</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <div><strong>Trama</strong><small>BNCC Computação</small></div>
+      </div>
+      <nav aria-label="Navegação principal">
+        <button class="nav-item active" data-view="inicio"><span>⌂</span> Visão geral</button>
+        <button class="nav-item" data-view="planejar"><span>✦</span> Planejar aula</button>
+        <button class="nav-item" data-view="bncc"><span>⌕</span> Explorar BNCC</button>
+        <button class="nav-item" data-view="planos"><span>▤</span> Meus planos</button>
+        <button class="nav-item" data-view="turmas"><span>◎</span> Turmas</button>
+        <button class="nav-item" data-view="avaliar"><span>✓</span> Avaliar</button>
+        <button class="nav-item" data-view="relatorios"><span>↗</span> Relatórios</button>
+        <button class="nav-item" data-view="pdi"><span>◇</span> PDI pedagógico</button>
+      </nav>
+      <div class="local-note"><span>●</span><div><strong>Dados neste dispositivo</strong><small>Nada é enviado para a internet</small></div></div>
+      <button class="nav-item backup-link" data-view="dados"><span>⇩</span> Backup e dados</button>
+    </aside>
+
+    <main id="conteudo">
+      <header class="topbar">
+        <button class="mobile-menu" aria-label="Abrir menu">☰</button>
+        <div><span class="eyebrow">PLANEJAMENTO CURRICULAR</span><h1 id="page-title">Visão geral</h1></div>
+        <div class="top-actions"><span class="status-pill">Base BNCC 2026.07</span><button class="primary small" data-go="planejar">+ Novo plano</button></div>
+      </header>
+
+      <section class="view active" id="view-inicio">
+        <div class="hero-card">
+          <div><span class="kicker">ENSINAR É CRIAR CONEXÕES</span><h2>Transforme um assunto em uma experiência de aprendizagem.</h2><p>Conecte o componente curricular à BNCC Computação e gere uma sequência com tecnologia, alternativa desplugada e projeto transversal.</p><button class="primary" data-go="planejar">Criar meu primeiro plano →</button></div>
+          <div class="hero-visual" aria-hidden="true"><span class="orbit o1">CO</span><span class="orbit o2">MA</span><span class="orbit o3">LP</span><div class="core">BNCC<small>conexões</small></div></div>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">SEU ESPAÇO</span><h2>Acompanhamento rápido</h2></div><span class="muted" id="today-label"></span></div>
+        <div class="stat-grid">
+          <article class="stat"><span class="stat-icon lilac">▤</span><div><strong id="stat-planos">0</strong><small>Planos salvos</small></div></article>
+          <article class="stat"><span class="stat-icon mint">◎</span><div><strong id="stat-turmas">0</strong><small>Turmas cadastradas</small></div></article>
+          <article class="stat"><span class="stat-icon peach">✓</span><div><strong id="stat-avaliacoes">0</strong><small>Avaliações registradas</small></div></article>
+          <article class="stat"><span class="stat-icon blue">◇</span><div><strong id="stat-pdis">0</strong><small>PDIs ativos</small></div></article>
+        </div>
+        <div class="two-col">
+          <article class="panel"><div class="panel-title"><div><span class="eyebrow">COMECE POR AQUI</span><h3>Fluxo sugerido</h3></div></div><ol class="steps"><li><span>1</span><div><strong>Crie uma turma numérica</strong><small>Identifique estudantes apenas por ano, turma e número.</small></div></li><li><span>2</span><div><strong>Gere um plano conectado</strong><small>Escolha assunto, ano e componente curricular.</small></div></li><li><span>3</span><div><strong>Registre evidências</strong><small>Avalie por rubricas sem confundir processo e domínio.</small></div></li></ol></article>
+          <article class="panel accent-panel"><span class="eyebrow">PRIVACIDADE DESDE O INÍCIO</span><h3>Os estudantes são números, não perfis públicos.</h3><p>O portal não pede nomes nem diagnósticos. Turmas, avaliações e PDIs ficam somente neste navegador.</p><button class="text-button" data-go="dados">Ver opções de backup →</button></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-planejar">
+        <div class="page-intro"><div><span class="eyebrow">GERADOR CURRICULAR</span><h2>Qual conexão vamos construir?</h2><p>Comece pelo conteúdo da sua aula. O Trama procura habilidades oficiais da mesma etapa e explica o grau de correspondência.</p></div></div>
+        <form id="planner-form" class="planner-grid">
+          <article class="panel form-panel">
+            <div class="step-label"><span>01</span><div><strong>Contexto da aula</strong><small>Dados essenciais para localizar as habilidades</small></div></div>
+            <label>Assunto da aula<input id="topic" required placeholder="Ex.: variáveis, publicidade, ecossistemas..." /></label>
+            <div class="field-row"><label>Ano/série<select id="year" required><option value="6">6º ano</option><option value="7" selected>7º ano</option><option value="8">8º ano</option><option value="9">9º ano</option></select></label><label>Componente<select id="component" required><option value="Matemática">Matemática</option><option value="Língua Portuguesa">Língua Portuguesa</option><option value="Ciências">Ciências</option><option value="Geografia">Geografia</option><option value="História">História</option><option value="Arte">Arte</option></select></label></div>
+            <div class="field-row"><label>Quantidade de aulas<select id="lessons"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label><label>Duração<select id="duration"><option>45 min</option><option selected>50 min</option><option>60 min</option><option>90 min</option></select></label></div>
+          </article>
+          <article class="panel form-panel">
+            <div class="step-label"><span>02</span><div><strong>Possibilidades</strong><small>O plano sempre oferecerá caminhos equivalentes</small></div></div>
+            <fieldset><legend>Modalidade preferencial</legend><div class="segmented"><label><input type="radio" name="mode" value="Híbrida" checked /> Híbrida</label><label><input type="radio" name="mode" value="Com tecnologia" /> Com tecnologia</label><label><input type="radio" name="mode" value="Desplugada" /> Desplugada</label></div></fieldset>
+            <label>Recursos disponíveis<input id="resources" placeholder="Ex.: Chromebooks, Scratch, papel e cartões" value="Chromebooks, projetor, papel e cartões" /></label>
+            <label>Observações da turma<textarea id="class-notes" rows="4" placeholder="Opcional. Não inclua nomes ou diagnósticos."></textarea></label>
+            <label class="check"><input id="transversal" type="checkbox" checked /><span><strong>Incluir projeto transversal</strong><small>Sugere um produto final que una os componentes.</small></span></label>
+          </article>
+          <div class="planner-submit"><button class="primary large" type="submit">Gerar plano conectado ✦</button><small>Os códigos são selecionados da base curricular local.</small></div>
+        </form>
+        <div id="generated-plan" class="generated-area" aria-live="polite"></div>
+      </section>
+
+      <section class="view" id="view-bncc">
+        <div class="section-heading"><div><span class="eyebrow">COMPLEMENTO DE COMPUTAÇÃO</span><h2>Explorar habilidades</h2><p>Consulte a base oficial local por ano, eixo, código ou palavra-chave.</p></div><span class="status-pill" id="catalog-count">0 habilidades</span></div>
+        <div class="panel catalog-filters"><label>Buscar<input id="catalog-search" placeholder="Ex.: variáveis, internet, ética, dados..." /></label><label>Componente<select id="catalog-component"><option value="Computação">Computação</option><option>Matemática</option><option>Língua Portuguesa</option><option>Ciências</option><option>Geografia</option><option>História</option><option>Arte</option></select></label><label>Ano<select id="catalog-year"><option value="all">Todos</option><option value="6">6º ano</option><option value="7">7º ano</option><option value="8">8º ano</option><option value="9">9º ano</option></select></label><label>Eixo<select id="catalog-axis"><option value="all">Todos</option><option>Pensamento Computacional</option><option>Mundo Digital</option><option>Cultura Digital</option></select></label></div>
+        <div id="catalog-list" class="skill-catalog"></div>
+      </section>
+
+      <section class="view" id="view-planos"><div class="section-heading"><div><span class="eyebrow">BIBLIOTECA LOCAL</span><h2>Meus planos</h2><p>Planos salvos neste dispositivo.</p></div><button class="primary" data-go="planejar">+ Novo plano</button></div><div id="plans-list" class="card-list"></div></section>
+
+      <section class="view" id="view-turmas"><div class="section-heading"><div><span class="eyebrow">IDENTIFICAÇÃO NUMÉRICA</span><h2>Turmas</h2><p>Cadastre somente a série, a letra da turma e a quantidade de estudantes.</p></div></div><div class="two-col align-start"><form id="class-form" class="panel"><h3>Nova turma</h3><div class="field-row"><label>Ano<select id="class-year"><option>6</option><option selected>7</option><option>8</option><option>9</option></select></label><label>Turma<input id="class-letter" maxlength="3" value="A" required /></label></div><label>Quantidade de estudantes<input id="class-size" type="number" min="1" max="60" value="30" required /></label><button class="primary full" type="submit">Criar identificadores</button></form><div id="classes-list" class="card-list"></div></div></section>
+
+      <section class="view" id="view-avaliar"><div class="section-heading"><div><span class="eyebrow">EVIDÊNCIAS DE APRENDIZAGEM</span><h2>Avaliar uma aplicação</h2><p>Use 1–4 ou N/O. Ausência de evidência não vira nota baixa.</p></div></div><div class="panel"><div class="field-row"><label>Turma<select id="assessment-class"></select></label><label>Plano<select id="assessment-plan"></select></label></div><button id="load-rubric" class="secondary">Preparar rubrica</button></div><form id="rubric-form" class="rubric-wrap"></form></section>
+
+      <section class="view" id="view-relatorios"><div class="section-heading"><div><span class="eyebrow">PROGRESSO INDIVIDUAL</span><h2>Relatórios</h2><p>Síntese baseada nas evidências registradas.</p></div><button id="print-report" class="secondary">Imprimir / salvar PDF</button></div><div class="panel"><div class="field-row"><label>Turma<select id="report-class"></select></label><label>Estudante<select id="report-student"></select></label></div></div><div id="report-output" class="report-output"></div></section>
+
+      <section class="view" id="view-pdi"><div class="section-heading"><div><span class="eyebrow">ACESSO E PARTICIPAÇÃO</span><h2>PDI pedagógico</h2><p>Registre barreiras e apoios observáveis, sem diagnósticos ou dados clínicos.</p></div></div><div class="two-col align-start"><form id="pdi-form" class="panel"><div class="field-row"><label>Turma<select id="pdi-class"></select></label><label>Estudante<select id="pdi-student"></select></label></div><label>Barreiras observadas<textarea id="pdi-barriers" rows="3" placeholder="Ex.: instruções longas; excesso de estímulos..."></textarea></label><label>Estratégias favoráveis<textarea id="pdi-strategies" rows="3" placeholder="Ex.: roteiro visual; etapas curtas; tempo ampliado..."></textarea></label><label>Formas de demonstrar aprendizagem<textarea id="pdi-expression" rows="3" placeholder="Ex.: demonstração prática, áudio, sequência de cartões..."></textarea></label><label>Objetivo mensurável<input id="pdi-goal" placeholder="Ex.: ordenar corretamente 4 de 5 passos" /></label><button class="primary full" type="submit">Salvar PDI pedagógico</button></form><div id="pdi-preview" class="panel soft"></div></div></section>
+
+      <section class="view" id="view-dados"><div class="section-heading"><div><span class="eyebrow">CONTROLE DO PROFESSOR</span><h2>Backup e dados</h2><p>O repositório contém apenas o aplicativo. Seus registros ficam neste navegador.</p></div></div><div class="three-col"><article class="panel"><span class="stat-icon mint">⇩</span><h3>Exportar backup</h3><p>Baixe planos, turmas, avaliações e PDIs em um único arquivo.</p><button id="export-data" class="secondary full">Baixar backup</button></article><article class="panel"><span class="stat-icon blue">⇧</span><h3>Restaurar backup</h3><p>Importe um arquivo anteriormente exportado pelo Trama.</p><label class="file-button">Escolher arquivo<input id="import-data" type="file" accept="application/json" /></label></article><article class="panel danger"><span class="stat-icon peach">×</span><h3>Apagar dados locais</h3><p>Remove definitivamente os registros deste navegador.</p><button id="clear-data" class="danger-button full">Apagar tudo</button></article></div></section>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="curriculum-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

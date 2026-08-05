@@ -1,0 +1,7 @@
+.DS_Store
+Thumbs.db
+.codex/
+.pnpm-store/
+*.log
+.env*
+trama-backup-*.json
