@@ -2,7 +2,7 @@
 
 Portal estático para planejamento interdisciplinar, avaliação por rubricas e acompanhamento pedagógico com identificadores numéricos.
 
-## Recursos da primeira versão
+## Recursos
 
 - geração de planos com tecnologia e sem tecnologia;
 - correspondências entre componentes curriculares e BNCC Computação;
